@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <style>
+
+    body {
+    
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+  
+      }
+
+    #liverdiseasepage {
+        padding: 20px;
+        border-spacing: 15px;
+        text-align: justify;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color:antiquewhite;
+      }
+
+    #sub{
+        margin-bottom: 20px;
+    }
+
+
+  </style>
+
+</head>
+
+
+
+<body>
+    <div id="liverdiseasepage">
+        <h1>Liver Disease</h1>
+        <h5>Attribute Information:</h5>
+        Age of the patient
+        <br>Gender of the patient
+        <br>Total Bilirubin
+        <br>Direct Bilirubin
+        <br>Alkaline Phosphotase
+        <br>Alamine Aminotransferase
+        <br>Aspartate Aminotransferase
+        <br>Total Protiens
+        <br>Albumin
+        <br>Albumin and Globulin Ratio
+        <br>Dataset: field used to split the data into two sets (patient with liver disease, or no disease)
+    </div>
+  
+    <div style="color:black; text-align: center"><h1>Fill the required fields:</h1><br></div> 
+        <div 
+            style="
+                width: 500px;
+                height: 40rem;
+                margin: 0px auto;
+                color: black;
+                border-radius: 25px;
+                padding: 10px 10px;
+              "
+            > 
+    
+        <form action="{{ url_for('liverdisease')}}" method="POST">
+            <div class="form-group">     
+            <label for="first"><strong>Age</strong></label> <input class="form-control" id="first" name="Age" type="number"  required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="second"><strong>Gender</strong></label>
+            <select class="form-control" name = 'Gender' style="font-weight: bold" required>
+             <option value="0">Female</option>
+             <option value="1">Male</option></select></div>
+
+            <div class="form-group">
+            <label for="third"><strong>Total Bilirubin</strong></label> <input class="form-control" id="third" name="Total_Bilirubin" type="number" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="fourth"><strong>Direct Bilirubin</strong></label> <input class="form-control" id="fourth" name="Direct_Bilirubin" type="number" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="fifth"><strong>Alkaline Phosphotase</strong></label> <input class="form-control" id="fifth" name="Alkaline_Phosphotase" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="sixth"><strong>Alamine Aminotransferase</strong></label> <input class="form-control" id="sixth" name="Alamine_Aminotransferase" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="seventh"><strong>Aspartate Aminotransferase</strong></label> <input class="form-control" id="seventh" name="Aspartate_Aminotransferase" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="eighth"><strong>Total Protiens</strong></label> <input class="form-control" name="Total_Protiens" id="eighth" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="ninth"><strong>Albumin</strong></label> <input class="form-control" id="ninth" name="Albumin" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="tenth"><strong>Albumin and Globulin Ratio</strong></label> <input class="form-control" id="tenth" name="Albumin_and_Globulin_Ratio" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <br><br><button id="sub" type="submit ">Predict</button>
+            </div>
+        </form>
+    
+    </div> 
+
+</body>
+</html>

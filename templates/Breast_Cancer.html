@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <style>
+    h4{
+      margin-left: 4%;
+    }
+      
+    body {
+    
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+
+    }
+
+    #cancerpage {
+        padding: 20px;
+        border-spacing: 15px;
+        text-align: justify;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color:antiquewhite;
+      }
+
+    #sub{
+      margin-bottom: 20px;
+    }
+  
+  </style>
+
+</head>
+
+<body>
+
+    <div id="cancerpage">
+        
+
+    <div style="color:black; text-align: center"><h1>Fill the required fields:</h1></div>
+    <div 
+            style="
+                width: 500px;
+                height: 40rem;
+                margin: 0px auto;
+                color: black;
+                border-radius: 25px;
+                padding: 10px 10px;
+              "
+            > 
+
+        <form action="{{ url_for('breastcancer')}}" method="POST">    
+            
+            <div class="form-group">
+            <label for="first"><strong>Texture Mean - standard deviation of gray-scale values</strong></label> <input class="form-control" id="first" name="texture_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="second"><strong>Perimeter Mean - Mean size of the core tumor</strong></label> <input class="form-control" id="second" name="perimeter_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="third"><strong>Smoothness Mean - Mean of local variation in radius lengths</strong></label> <input class="form-control" id="third" name="smoothness_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="fourth"><strong>Compactness Mean</strong></label> <input class="form-control" id="fourth" name="compactness_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="fifth"><strong>Concavity Mean - Mean of severity of concave portions of the contour</strong></label> <input class="form-control" id="fifth" name="concavity_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="sixth"><strong>Concave Points Mean - Mean for number of concave portions of the contour</strong></label> <input class="form-control" id="sixth" name="concave_points_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="seventh"><strong>Symmetry Mean</strong></label> <input class="form-control" id="seventh" name="symmetry_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="eighth"><strong>Radius Se - Standard error for the mean of distances from center to points on the perimeter</strong></label> <input class="form-control" name="radius_se" id="eighth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="ninth"><strong>Compactness Se - Standard error for perimeter² / area — 1.0</strong></label> <input class="form-control" id="ninth" name="compactness_se" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="tenth"><strong>Concavity Se - Standard error for severity of concave portions of the contour</strong></label> <input class="form-control" id="tenth" name="concavity_se" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="eleventh"><strong>Concave Points Se - Standard error for number of concave portions of the contour</strong></label> <input class="form-control" name="concave_points_se" id="eleventh" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="twelfth"><strong>Texture Worst - “worst” or largest mean value for standard deviation of gray-scale values</strong></label> <input class="form-control" name="texture_worst" id="twelfth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="thirteenth"><strong>Smoothness Worst - “worst” or largest mean value for local variation in radius lengths</strong></label> <input class="form-control" name="smoothness_worst" id="thirteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="fourteenth"><strong>Compactness Worst - “worst” or largest mean value for perimeter² / area — 1.0</strong></label> <input class="form-control" name="compactness_worst" id="fourteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="fifteenth"><strong>Concavity Worst - “worst” or largest mean value for severity of concave portions of the contour</strong></label> <input class="form-control" name="concavity_worst" id="fifteenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="sixteenth"><strong>Concave Points Worst - “worst” or largest mean value for number of concave portions of the contour</strong></label> <input class="form-control" name="concave_points_worst" id="sixteenth" type="number" step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="seventeenth"><strong>Symmetry Worst</strong></label> <input class="form-control" name="symmetry_worst" id="seventeenth" type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <div class="form-group">
+            <label for="eighteenth"><strong>Fractal Dimension Worst - “worst” or largest mean value for “coastline approximation” — 1</strong></label> <input class="form-control" name="fractal_dimension_worst" id="eighteenth"  type="number"  step="any" required="required" style="font-weight:bold"></div>
+
+            <br><br><button id="sub" type="submit ">Predict</button>
+        </form>  
+    </div>
+
+</body>
+  
+  
+</html>

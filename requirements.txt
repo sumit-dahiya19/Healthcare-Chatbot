@@ -1,0 +1,7 @@
+Flask==1.1.1
+numpy==1.17.2
+gunicorn==19.9.0
+pandas==0.25.1
+pickle-mixin==1.0.2
+pickleshare==0.7.5
+sklearn==0.0

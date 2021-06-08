@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Overpass' rel='stylesheet'>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <style>
+    h4{
+      margin-left: 4%;
+    }
+      
+    body {
+    
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+
+    }
+
+    #heartdiseasepage {
+        padding: 20px;
+        border-spacing: 15px;
+        text-align: justify;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color:antiquewhite;
+      }
+
+    #sub{
+      margin-bottom: 20px;
+    }
+  
+  </style>
+
+</head>
+
+<body>
+    <div id="heartdiseasepage">
+        <h1>Heart Disease</h1>
+       
+        <br><h5>Attribute Information:</h5>
+        age: age in years
+        <br>sex: (1 = male; 0 = female)
+        <br>cp: chest pain type
+        <br>trestbps: resting blood pressure (in mm Hg on admission to the hospital)
+        <br>chol: serum cholestoral in mg/dl
+        <br>fbs: (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false)
+        <br>restecg: resting electrocardiographic results
+        <br>thalach: maximum heart rate achieved
+        <br>exang: exercise induced angina (1 = yes; 0 = no)
+        <br>oldpeak: ST depression induced by exercise relative to rest
+        <br>slope: the slope of the peak exercise ST segment
+        <br>ca: number of major vessels (0–4) colored by flourosopy
+        <br>thal: thalassemia (1 = normal; 2 = fixed defect; 3 = reversable defect)
+        <br>target: (1= heart disease or 0 = no heart disease)<p><br>
+    </div><br>
+
+    <div style="color:black; text-align: center"><h1>Fill the required fields:</h1></div> 
+    <div 
+            style="
+                width: 500px;
+                height: 40rem;
+                margin: 0px auto;
+                color: black;
+                border-radius: 25px;
+                padding: 10px 10px;
+              "
+            > 
+        <form action="{{ url_for('heartdisease')}}" method="POST">   
+            <div class="form-group">
+            <label for="first"><strong>Age </strong></label> <input class="form-control" id="first" name="age" type="number" required="required"
+            style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="second"><strong>Gender (1 = male; 0 = female)</strong></label><select class="form-control" name = 'sex' style="font-weight: bold" required>
+               <option value="0">Female</option>
+               <option value="1">Male</option></select></div>
+
+            <div class="form-group">   
+            <label for="third"><strong>Chest Pain Type</strong></label>
+            <select name = 'cp' class="form-control" style="font-weight: bold" required>
+               <option value="0">0</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+             </select></div>
+
+            <div class="form-group">
+            <label for="fourth"><strong>Resting Blood Pressure (in mm Hg) </strong></label> <input class="form-control" id="fourth" name="trestbps" type="number" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group"> 
+            <label for="fifth"><strong>Resting Electrocardiographic Results</strong></label> 
+            <select name = 'restecg' class="form-control" style="font-weight: bold" required>
+               <option value="0">0</option>
+               <option value="1">1</option>
+             </select></div>
+
+            <div class="form-group"> 
+            <label for="sixth"><strong>MaxHeartRate (maximum heart rate achieved eg. 156, 173, 187,...)</strong></label> <input class="form-control" id="sixth" name="thalach" type="number" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="seventh"><strong>Exercise Induced Angina (0 = No; 1 = Yes)</strong></label>
+            <select name = 'exang' class="form-control" style="font-weight: bold" required>
+               <option value="0">No</option>
+               <option value="1">Yes</option>
+             </select></div>
+
+            <div class="form-group">
+            <label for="eighth"><strong>STdepression (ST depression induced by exercise relative to rest eg. 0.8, 1.4, 3.5,...) </strong></label> <input class="form-control" id="eighth" name="oldpeak" type="number" step="any" required="required" style="font-weight: bold"></div>
+
+            <div class="form-group">
+            <label for="ninth"><strong>Slope of the peak exercise ST segment</strong></label>
+            <select name = 'slope' class="form-control" style="font-weight: bold" required>
+               <option value="0">0</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+             </select></div>
+
+            <div class="form-group">
+            <label for="tenth"><strong>Number of major vessels</strong></label>
+            <select name = 'ca' class="form-control" style="font-weight: bold" required>
+               <option value="0">0</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+             </select></div>
+
+           <div class="form-group">
+           <label for="eleventh"><strong>Thalassemia (1=Normal; 2=Fixed Defect; 3=Reversable)</strong></label>
+           <select name = 'thal' class="form-control" style="font-weight: bold" required>
+               <option value="1">Normal</option>
+               <option value="2">Fixed Defect</option>
+               <option value="3">Reversable</option>
+             </select></div>
+            <br><br>
+            <button id="sub" type="submit ">Predict</button>
+        </form>
+</body>
+  
+</html>
