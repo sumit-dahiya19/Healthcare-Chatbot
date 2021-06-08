@@ -12,29 +12,14 @@
 
   <style>
 
-    body {
     
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-        width: 100%;
-  
-      }
-
-    #liverdiseasepage {
-        padding: 20px;
-        border-spacing: 15px;
-        text-align: justify;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        background-color:antiquewhite;
-      }
-
-    #sub{
-        margin-bottom: 20px;
-    }
-
+#form{
+    padding: 0px 0px 0px 100px ;
+    margin: 0px 0px 0px 0px ;
+  }
+  form{
+    width: 55%;  
+  }
 
   </style>
 
@@ -43,34 +28,21 @@
 
 
 <body>
-    <div id="liverdiseasepage">
-        <h1>Liver Disease</h1>
-        <h5>Attribute Information:</h5>
-        Age of the patient
-        <br>Gender of the patient
-        <br>Total Bilirubin
-        <br>Direct Bilirubin
-        <br>Alkaline Phosphotase
-        <br>Alamine Aminotransferase
-        <br>Aspartate Aminotransferase
-        <br>Total Protiens
-        <br>Albumin
-        <br>Albumin and Globulin Ratio
-        <br>Dataset: field used to split the data into two sets (patient with liver disease, or no disease)
-    </div>
+   
+  <div class="jumbotron">
+    <h2 class="display-4">Liver Disease</h2>
+    <p class="lead"></p>
+    <hr class="my-4" />
+    <p>
+      Liver disease is any disturbance of liver function that causes illness. The liver is responsible for many critical functions within the body and should it become diseased or injured, the loss of those functions can cause significant damage to the body <br>
+      Symptoms:Symptoms vary but may include yellow eyes and skin (jaundice), nausea, abdominal pain and swelling, and swelling of the legs <br>
+      Treatments:Treatment depends on the type of liver disease and can include taking medication and avoiding alcohol. A transplant may be required in advanced cases.
+
+    </p>
+  </div>
   
-    <div style="color:black; text-align: center"><h1>Fill the required fields:</h1><br></div> 
-        <div 
-            style="
-                width: 500px;
-                height: 40rem;
-                margin: 0px auto;
-                color: black;
-                border-radius: 25px;
-                padding: 10px 10px;
-              "
-            > 
     
+    <div id="form">
         <form action="{{ url_for('liverdisease')}}" method="POST">
             <div class="form-group">     
             <label for="first"><strong>Age</strong></label> <input class="form-control" id="first" name="Age" type="number"  required="required" style="font-weight: bold"></div>
@@ -108,7 +80,7 @@
             <br><br><button id="sub" type="submit ">Predict</button>
             </div>
         </form>
-    
+      </div>
     </div> 
 
 </body>

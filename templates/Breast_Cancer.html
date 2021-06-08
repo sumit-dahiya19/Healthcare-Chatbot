@@ -8,59 +8,34 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <style>
-    h4{
-      margin-left: 4%;
-    }
-      
-    body {
-    
-      background-position: bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-
-    }
-
-    #cancerpage {
-        padding: 20px;
-        border-spacing: 15px;
-        text-align: justify;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
-        background-color:antiquewhite;
-      }
-
-    #sub{
-      margin-bottom: 20px;
-    }
   
-  </style>
-
+<style>
+  #form{
+    padding: 0px 0px 0px 100px ;
+    margin: 0px 0px 0px 0px ;
+  }
+  form{
+    width: 55%;  
+  }
+</style>
 </head>
 
 <body>
 
-    <div id="cancerpage">
-        
+  <div class="jumbotron">
+    <h2 class="display-4"> Breast Cancer</h2>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p>Symptoms:  Breast cancer  symptoms include a lump in the breast, bloody discharge from the nipple and changes in the shape or texture of the nipple or breast <br>  
+     Treatment: depends on the stage of cancer. It may consist of chemotherapy, radiation, hormone therapy and surgery.</p>
+  </div>
 
-    <div style="color:black; text-align: center"><h1>Fill the required fields:</h1></div>
-    <div 
-            style="
-                width: 500px;
-                height: 40rem;
-                margin: 0px auto;
-                color: black;
-                border-radius: 25px;
-                padding: 10px 10px;
-              "
-            > 
+  <div id="form">
 
-        <form action="{{ url_for('breastcancer')}}" method="POST">    
+        <form action="{{ url_for('breastcancer')}}" method="POST" >    
             
             <div class="form-group">
-            <label for="first"><strong>Texture Mean - standard deviation of gray-scale values</strong></label> <input class="form-control" id="first" name="texture_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
+            <label for="first"><strong>Texture Mean - standard deviation of gray-scale values</strong></label> <input class="form-control" id="first" name="texture_mean" type="number" step="any" required="required" style="font-weight:bold" ></div>
 
             <div class="form-group">
             <label for="second"><strong>Perimeter Mean - Mean size of the core tumor</strong></label> <input class="form-control" id="second" name="perimeter_mean" type="number" step="any" required="required" style="font-weight:bold"></div>
@@ -72,7 +47,8 @@
             <label for="fourth"><strong>Compactness Mean</strong></label> <input class="form-control" id="fourth" name="compactness_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
 
             <div class="form-group">
-            <label for="fifth"><strong>Concavity Mean - Mean of severity of concave portions of the contour</strong></label> <input class="form-control" id="fifth" name="concavity_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
+            <label for="fifth"><strong>Concavity Mean - Mean of severity of concave portions of the contour</strong></label>
+             <input class="form-control" id="fifth" name="concavity_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
 
             <div class="form-group">
             <label for="sixth"><strong>Concave Points Mean - Mean for number of concave portions of the contour</strong></label> <input class="form-control" id="sixth" name="concave_points_mean" type="number"  step="any" required="required" style="font-weight:bold"></div>
@@ -116,7 +92,9 @@
             <br><br><button id="sub" type="submit ">Predict</button>
         </form>  
     </div>
+  </div>
 
+  
 </body>
   
   
