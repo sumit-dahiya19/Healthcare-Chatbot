@@ -8,32 +8,55 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
+
 <style>
   #form{
     padding: 0px 0px 0px 100px ;
     margin: 0px 0px 0px 0px ;
   }
   form{
-    width: 55%;  
+    width: 55%;
   }
 </style>
 </head>
 
 <body>
 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="color: aqua">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto" >
+
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/heartdisease">Heart Disease</a>
+        </li>
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/liverdisease">Liver Disease</a>
+        </li>
+        <li class="nav-item" style = "font-weight: 600;">
+          <a class="nav-link" href="/breastcancer">Breast Cancer</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
   <div class="jumbotron">
     <h2 class="display-4"> Breast Cancer</h2>
     <p class="lead"></p>
     <hr class="my-4">
-    <p>Symptoms:  Breast cancer  symptoms include a lump in the breast, bloody discharge from the nipple and changes in the shape or texture of the nipple or breast <br>  
+    <p>Symptoms:  Breast cancer  symptoms include a lump in the breast, bloody discharge from the nipple and changes in the shape or texture of the nipple or breast <br>
      Treatment: depends on the stage of cancer. It may consist of chemotherapy, radiation, hormone therapy and surgery.</p>
   </div>
 
   <div id="form">
 
-        <form action="{{ url_for('breastcancer')}}" method="POST" >    
-            
+
+        <form action="{{ url_for('breastcancer')}}" method="POST" >
+
             <div class="form-group">
             <label for="first"><strong>Texture Mean - standard deviation of gray-scale values</strong></label> <input class="form-control" id="first" name="texture_mean" type="number" step="any" required="required" style="font-weight:bold" ></div>
 
@@ -90,12 +113,12 @@
             <label for="eighteenth"><strong>Fractal Dimension Worst - “worst” or largest mean value for “coastline approximation” — 1</strong></label> <input class="form-control" name="fractal_dimension_worst" id="eighteenth"  type="number"  step="any" required="required" style="font-weight:bold"></div>
 
             <br><br><button id="sub" type="submit ">Predict</button>
-        </form>  
+        </form>
     </div>
   </div>
 
-  
+
 </body>
-  
-  
+
+
 </html>
